@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+
+    <!--
+        중괄호 두 개 사용하면 thymeleaf에서 컨버터 기능을 사용할 수 있다.
+        ${{number}}의 경우 view 단으로 넘어왔을 때 integer 값을 String으로 변환한 것이고
+        ${{ipPort}}는 ipPort 객체를 String으로 변환한 것이다.
+    -->
+
+    <body>
+        <ul>
+            <li>${number}: <span th:text="${number}"></span></li>
+            <li>${{number}}: <span th:text="${{number}}"></span></li>
+            <li>${ipPort}: <span th:text="${ipPort}"></span></li>
+            <li>${{ipPort}}: <span th:text="${{ipPort}}"></span></li>
+        </ul>
+    </body>
+</html>
