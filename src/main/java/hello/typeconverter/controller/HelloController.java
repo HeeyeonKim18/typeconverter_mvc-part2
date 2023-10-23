@@ -1,6 +1,7 @@
 package hello.typeconverter.controller;
 
 import hello.typeconverter.type.IpPort;
+import hello.typeconverter.type.Phone;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -39,6 +40,14 @@ public class HelloController {
     public String ipPort(@RequestParam IpPort ipPort){
         System.out.println("ipPort.getIp() = " + ipPort.getIp());
         System.out.println("ipPort.getPort() = " + ipPort.getPort());
+        return "ok";
+    }
+
+    @GetMapping("/phone")
+    public String phone(@RequestParam Phone phone){
+        System.out.println("phone.getTel1() = " + phone.getTel1());
+        System.out.println("phone.getTel2() = " + phone.getTel2());
+        System.out.println("phone.getTel3() = " + phone.getTel3());
         return "ok";
     }
 }

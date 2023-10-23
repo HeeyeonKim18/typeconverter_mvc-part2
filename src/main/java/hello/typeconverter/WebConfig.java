@@ -1,9 +1,6 @@
 package hello.typeconverter;
 
-import hello.typeconverter.converter.IntegerToStringConverter;
-import hello.typeconverter.converter.IpPortToStringConverter;
-import hello.typeconverter.converter.StringToIntegerConverter;
-import hello.typeconverter.converter.StringToIpPortConverter;
+import hello.typeconverter.converter.*;
 import hello.typeconverter.formatter.MyNumberFormatter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
@@ -23,6 +20,8 @@ public class WebConfig implements WebMvcConfigurer {
         */
 //        registry.addConverter(new StringToIntegerConverter());
 //        registry.addConverter(new IntegerToStringConverter());
+        registry.addConverter(new StringToPhoneConverter());
+        registry.addConverter(new PhoneToStringConverter());
         registry.addConverter(new StringToIpPortConverter());
         registry.addConverter(new IpPortToStringConverter());
 
